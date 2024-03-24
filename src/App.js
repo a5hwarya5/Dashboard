@@ -4,6 +4,10 @@ import { useSelector } from 'react-redux'
 
 import { CSpinner, useColorModes } from '@coreui/react'
 import './scss/style.scss'
+import GeminiChatbot from './components/GeminiChatbot'
+import '../src/GeminiChatbot.css'
+import Imagebutton from './components/Imagebuttonnew'
+import '../src/Imagebuttonnew.css'
 
 // Containers
 const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'))
@@ -48,9 +52,19 @@ const App = () => {
           <Route exact path="/404" name="Page 404" element={<Page404 />} />
           <Route exact path="/500" name="Page 500" element={<Page500 />} />
           <Route path="*" name="Home" element={<DefaultLayout />} />
+        
         </Routes>
+        <div className='image'>
+        <Imagebutton/>
+        </div>
+
+        <div className='chatbot'>
+        <GeminiChatbot/>
+        </div>
+
       </Suspense>
     </HashRouter>
+  
   )
 }
 
